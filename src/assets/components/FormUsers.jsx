@@ -17,7 +17,7 @@ const validationEMail ={
   },
   maxLength :{
     message: "Email is too Long",
-    value: 10
+    value: 50
   },
 }
 
