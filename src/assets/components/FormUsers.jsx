@@ -9,6 +9,18 @@ const defaultValues = {
   birthday: "",
 };
 
+const validationEMail ={
+  required: "Email is required",
+  minLength : {
+    message: "Email is too Short",
+    value: 3
+  },
+  maxLength :{
+    message: "Email is too Long",
+    value: 10
+  },
+}
+
 const FormUsers = ({
   createUser,
   userUpdate,
@@ -16,7 +28,7 @@ const FormUsers = ({
   isShowForm,
   handleChangeModal,
 }) => {
-  const { handleSubmit, register, reset } = useForm();
+  const { handleSubmit, register, reset, formState: {errors} } = useForm();
 
   const submitForm = (data) => {
     if (userUpdate) {
@@ -47,8 +59,11 @@ const FormUsers = ({
             placeholder="Enter Youre Name"
             className="form__inpt"
             type="email"
-            {...register("email")}
+            {...register("email", validationEMail)}
           />
+          {
+            errors.email && <p>{errors.email.message}</p>
+          }
         </div>
 
         <div className="form__div">
