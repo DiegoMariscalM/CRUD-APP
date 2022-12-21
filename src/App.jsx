@@ -20,6 +20,11 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleClickNewUSer = () => {
+    handleChangeModal()
+    setUserUpdate()
+  }
+
   //  Funcion q crea un usuario
   const createUser = (data) => {
     const URL = `${BASE_URL}users/`;
@@ -70,7 +75,7 @@ function App() {
     <div className="App">
       <div className="header-conatiner">
         <h1 className="header-container__title">C R U D</h1>
-        <button onClick={handleChangeModal} className="header__btn">
+        <button onClick={handleClickNewUSer} className="header__btn">
           <span></span>
           <span></span>
           <span></span>

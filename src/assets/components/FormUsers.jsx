@@ -42,6 +42,8 @@ const FormUsers = ({
   useEffect(() => {
     if (userUpdate) {
       reset(userUpdate);
+    }else {
+      reset(defaultValues)
     }
   }, [userUpdate]);
 
