@@ -9,7 +9,7 @@ const BASE_URL = "https://users-crud.academlo.tech/";
 function App() {
   const [users, setUsers] = useState();
   const [userUpdate, setUserUpdate] = useState();
-  const [isShowForm, setIsShowForm] = useState(false);
+  const [isShowForm, setIsShowForm] = useState(true);
 
   // Funcion q nos trae todos los usuarios
   const getAllUsers = () => {
